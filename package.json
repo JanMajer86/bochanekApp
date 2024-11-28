@@ -1,0 +1,15 @@
+{
+	"name": "bochanekapp",
+	"version": "1.0.0",
+	"description": "offspring name list/database",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.21.1",
+		"mongoose": "^8.8.3"
+	}
+}
