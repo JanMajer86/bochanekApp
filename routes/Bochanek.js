@@ -18,8 +18,7 @@ const BochanekSchema = new mongoose.Schema(
 			default: "waiting",
 		},
 		createdBy: {
-			type: mongoose.Types.ObjectId,
-			ref: "User",
+			type: String,
 			required: [true, "Bochánka musí přidat uživatel"],
 		},
 	},

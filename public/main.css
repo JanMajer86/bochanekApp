@@ -1,0 +1,33 @@
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.4rem;
+}
+.app {
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem auto;
+	background-color: #9ca3af;
+	min-width: fit-content;
+	width: 60rem;
+}
+
+.flex-item {
+	/* margin-bottom: 0.8rem; */
+	padding: 1.2rem;
+}
+
+.input-label {
+	font-size: 1rem;
+}
