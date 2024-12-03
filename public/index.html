@@ -9,22 +9,31 @@
 	<body>
 		<div class="app">
 			<div class="login-form flexbox">
-				<div class="flex-item btn-group">
-                    <label class="btn btn-user-select">
-                        <input type="radio" name="selector" id="selector" value="user-1"> user 1
-                    </label>
-                    <label class="btn btn-user-select">
-                        <input type="radio" name="selector" id="selector" value="user-1"> user 2
-                    </label>
-                </div>
-				<div class="flex-item text-input">
-                    <label for="password" class="input-label">password:</label></br>
-                    <input type="text" id="password" name="password" placeholder="password">
-                </div>
-				<div class="flex-item submit-button">
-					<input type="submit" value="log in" />
-				</div>
+				<form>
+					<div class="flex-item btn-group">
+						<label class="btn btn-user-select">
+							<input type="radio" name="user-select" value="user-1" /> user 1
+						</label>
+						<label class="btn btn-user-select">
+							<input type="radio" name="user-select" value="user-2" /> user 2
+						</label>
+					</div>
+					<div class="flex-item text-input">
+						<label for="password" class="input-label">password:</label><br />
+						<input
+							type="text"
+							id="password"
+							name="password"
+							placeholder="password"
+						/>
+					</div>
+					<div class="flex-item submit-button">
+						<input class="btn-submit" type="submit" value="log in" />
+					</div>
+				</form>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="login.js"></script>
 	</body>
 </html>

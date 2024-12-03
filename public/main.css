@@ -10,8 +10,9 @@ html {
 body {
 	font-size: 1.4rem;
 }
-.app {
-}
+
+/* .app {
+} */
 
 .login-form {
 	display: flex;
