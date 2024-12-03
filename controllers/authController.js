@@ -1,4 +1,6 @@
 require("dotenv").config();
+// require("dotenv");
+const jwt = require("jsonwebtoken");
 
 const login = async (req, res) => {
 	const { user, password } = req.body;
@@ -12,7 +14,14 @@ const login = async (req, res) => {
 		throw new Error();
 	} else console.log("password correct");
 
-	res.status(200).json({ user });
+	// create JWT
+	const token = (function () {
+		return jwt.sign({ user }, process.env.JWT_SECRET, {
+			expiresIn: process.env.JWT_LIFETIME,
+		});
+	})();
+
+	res.status(200).json({ user, token });
 };
 
 module.exports = login;
