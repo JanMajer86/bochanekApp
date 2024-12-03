@@ -1,7 +1,8 @@
 const Bochanek = require("../models/Bochanek");
 
 const getAllBochaneks = async (req, res) => {
-	res.status(200).send("all bochaneks");
+	const bochaneks = await Bochanek.find({}).sort("-createdAt");
+	res.status(200).json({ bochaneks });
 };
 
 const createBochanek = async (req, res) => {
@@ -10,4 +11,19 @@ const createBochanek = async (req, res) => {
 	res.status(201).json({ bochanek });
 };
 
-module.exports = { getAllBochaneks, createBochanek };
+const deleteBochanek = async (req, res) => {
+	const userName = req.user.name;
+	const bochanekId = req.params.id;
+	console.log(userName, bochanekId);
+
+	const bochanek = await Bochanek.findOneAndDelete({
+		_id: bochanekId,
+		createdBy: userName,
+	});
+	if (!bochanek) {
+		throw new Error();
+	}
+	res.status(200).send();
+};
+
+module.exports = { getAllBochaneks, createBochanek, deleteBochanek };
